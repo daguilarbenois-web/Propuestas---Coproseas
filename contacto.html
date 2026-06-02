@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#1a1a2e">
+<title>Contáctanos – COPROSEAS SpA</title>
+<meta property="og:title"       content="COPROSEAS SpA – Cotiza tu proyecto">
+<meta property="og:description" content="Construcción · Proyectos · Servicios · Asesorías. Déjanos tus datos y te contactamos.">
+<meta property="og:image"       content="logo.png">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --red:  #e63946;
+  --dark: #1a1a2e;
+  --mid:  #16213e;
+  --gold: #f4a522;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--dark);
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+  background: linear-gradient(160deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  padding: 48px 24px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; left: -60px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(230,57,70,.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; right: -40px;
+  width: 260px; height: 260px;
+  background: radial-gradient(circle, rgba(244,165,34,.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-logo {
+  width: 140px;
+  object-fit: contain;
+  margin: 0 auto 18px;
+  display: block;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,.4));
+}
+
+.hero h1 {
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+.hero h1 span { color: var(--red); }
+
+.hero p {
+  font-size: 0.95rem;
+  color: #aab;
+  margin-top: 10px;
+  line-height: 1.6;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+.tag {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 20px;
+  padding: 5px 13px;
+  font-size: 0.78rem;
+  color: #ccd;
+}
+
+/* ── Servicios ── */
+.services {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 28px 20px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.service-card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+  padding: 16px 12px;
+  text-align: center;
+}
+.service-card .icon { font-size: 1.8rem; margin-bottom: 7px; }
+.service-card h3 { font-size: 0.82rem; font-weight: 700; color: #eee; }
+.service-card p  { font-size: 0.72rem; color: #888; margin-top: 3px; line-height: 1.4; }
+
+/* ── Formulario ── */
+.form-section {
+  padding: 0 20px 48px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.form-title h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.form-title h2 span { color: var(--red); }
+.form-title p { font-size: 0.83rem; color: #888; margin-top: 5px; }
+
+.form-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 16px;
+  padding: 24px 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+.field label {
+  font-size: 0.78rem;
+  color: #aab;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.field input,
+.field select,
+.field textarea {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 9px;
+  color: #fff;
+  padding: 12px 14px;
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color .2s, background .2s;
+  -webkit-appearance: none;
+  width: 100%;
+}
+.field input::placeholder,
+.field textarea::placeholder { color: #556; }
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--red);
+  background: rgba(255,255,255,.1);
+}
+.field select option { background: #1a1a2e; color: #fff; }
+.field textarea { resize: none; min-height: 90px; }
+
+.required-note {
+  font-size: 0.72rem;
+  color: #666;
+  margin-bottom: 16px;
+}
+.required-note span { color: var(--red); }
+
+.btn-submit {
+  background: var(--red);
+  border: none;
+  border-radius: 11px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 15px;
+  width: 100%;
+  letter-spacing: 0.5px;
+  transition: background .2s, transform .1s;
+  margin-top: 4px;
+}
+.btn-submit:active { transform: scale(.98); }
+.btn-submit:hover  { background: #c1121f; }
+
+/* ── Éxito ── */
+.success-msg {
+  display: none;
+  text-align: center;
+  padding: 32px 20px;
+}
+.success-msg .check {
+  font-size: 3.5rem;
+  margin-bottom: 12px;
+}
+.success-msg h3 { font-size: 1.3rem; color: #4caf50; }
+.success-msg p  { font-size: 0.88rem; color: #aaa; margin-top: 8px; line-height: 1.6; }
+
+/* ── Footer ── */
+.footer {
+  border-top: 1px solid rgba(255,255,255,.07);
+  padding: 24px 20px;
+  text-align: center;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.footer-contact a {
+  color: #aab;
+  text-decoration: none;
+  font-size: 0.82rem;
+}
+.footer-contact a:hover { color: var(--red); }
+.footer-sep { color: #444; margin: 0 8px; }
+.footer-copy {
+  font-size: 0.72rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(230,57,70,.4), transparent);
+  margin: 4px 20px 0;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <img src="logo.png" alt="COPROSEAS" class="hero-logo" onerror="this.style.display='none'">
+  <h1>Construimos<br><span>tus proyectos</span></h1>
+  <p>Empresa constructora con 20 años de experiencia en obras de pequeña y mediana envergadura.</p>
+  <div class="hero-tags">
+    <span class="tag">🏗 Construcción</span>
+    <span class="tag">🏠 Remodelaciones</span>
+    <span class="tag">📋 Asesorías</span>
+    <span class="tag">🔍 ITO</span>
+  </div>
+</section>
+
+<!-- ══ SERVICIOS ══ -->
+<section class="services">
+  <div class="service-card">
+    <div class="icon">🏗</div>
+    <h3>Obras Civiles</h3>
+    <p>Construcción de pequeña y mediana envergadura</p>
+  </div>
+  <div class="service-card">
+    <div class="icon">🏠</div>
+    <h3>Remodelaciones</h3>
+    <p>Viviendas, ampliaciones y terminaciones</p>
+  </div>
+  <div class="service-card">
+    <div class="icon">📋</div>
+    <h3>Administración</h3>
+    <p>Gestión de contratos y control de costos</p>
+  </div>
+  <div class="service-card">
+    <div class="icon">🔍</div>
+    <h3>ITO</h3>
+    <p>Inspección técnica y control de calidad</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ FORMULARIO ══ -->
+<section class="form-section">
+  <div class="form-title">
+    <h2>Cotiza tu <span>proyecto</span></h2>
+    <p>Déjanos tus datos y te contactamos dentro de 24 horas hábiles.</p>
+  </div>
+
+  <div class="form-card">
+    <!-- Formulario conectado a Formspree -->
+    <form id="contact-form" action="https://formspree.io/f/mbdbnyyr" method="POST">
+
+      <p class="required-note">Campos obligatorios <span>*</span></p>
+
+      <div class="field">
+        <label>Nombre completo <span style="color:var(--red)">*</span></label>
+        <input type="text" name="nombre" placeholder="Tu nombre y apellido" required autocomplete="name">
+      </div>
+
+      <div class="field">
+        <label>Teléfono <span style="color:var(--red)">*</span></label>
+        <input type="tel" name="telefono" placeholder="+56 9 XXXX XXXX" required autocomplete="tel" inputmode="tel">
+      </div>
+
+      <div class="field">
+        <label>Correo electrónico</label>
+        <input type="email" name="email" placeholder="tu@correo.cl" autocomplete="email">
+      </div>
+
+      <div class="field">
+        <label>Tipo de proyecto <span style="color:var(--red)">*</span></label>
+        <select name="tipo_proyecto" required>
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option>Construcción nueva</option>
+          <option>Remodelación / Ampliación</option>
+          <option>Obra civil menor</option>
+          <option>Pavimentación / Radier</option>
+          <option>Techumbres y cubiertas</option>
+          <option>Instalaciones sanitarias</option>
+          <option>ITO / Inspección técnica</option>
+          <option>Otro</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Comuna / Ubicación <span style="color:var(--red)">*</span></label>
+        <input type="text" name="ubicacion" placeholder="Ej: La Florida, Santiago" required>
+      </div>
+
+      <div class="field">
+        <label>Cuéntanos tu proyecto</label>
+        <textarea name="descripcion" placeholder="Describe brevemente lo que necesitas construir o remodelar…"></textarea>
+      </div>
+
+      <!-- Campo oculto para identificar origen -->
+      <input type="hidden" name="_subject" value="🏗 Nueva consulta desde web COPROSEAS">
+      <input type="hidden" name="origen" value="Link Instagram / Facebook">
+      <input type="hidden" name="_next" value="">
+
+      <button type="submit" class="btn-submit">Enviar consulta →</button>
+    </form>
+
+    <!-- Mensaje de éxito -->
+    <div class="success-msg" id="success-msg">
+      <div class="check">✅</div>
+      <h3>¡Mensaje recibido!</h3>
+      <p>Gracias por contactarnos.<br>Te responderemos dentro de las próximas <strong>24 horas hábiles</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="footer-contact">
+    <a href="tel:+56978902754">📞 +56 9 7890 2754</a>
+    <span class="footer-sep">|</span>
+    <a href="mailto:daguilar@coproseas.cl">✉ daguilar@coproseas.cl</a>
+  </div>
+  <p class="footer-copy">COPROSEAS SpA · RUT 78.403.222-1 · Los Militares 5620, Of 905, Las Condes</p>
+</footer>
+
+<script>
+// Manejo del formulario con Formspree vía fetch (sin redirección)
+const form = document.getElementById('contact-form');
+const success = document.getElementById('success-msg');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = form.querySelector('.btn-submit');
+  btn.textContent = 'Enviando…';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      form.style.display = 'none';
+      success.style.display = 'block';
+    } else {
+      btn.textContent = 'Error al enviar. Intenta de nuevo.';
+      btn.disabled = false;
+    }
+  } catch {
+    btn.textContent = 'Error al enviar. Intenta de nuevo.';
+    btn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>
